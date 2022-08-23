@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    <img id="dog" scr=""/>
     <button onclick="newDog()">New Dog</button>
     <script type="text/javascript">
         var apiUrl = 'https://dog.ceo/api/breeds/image/random';
@@ -14,10 +15,10 @@
             fetch(apiUrl).then(response => {
             return response.json();
             }).then(data => {
-            // Work with JSON data here
-            console.log(data);
+                document.getElementById("dog").src = data["message"];
+                console.log(data);
             }).catch(err => {
-            // Do something for an error here
+                // Do something for an error here
             });
         }
     </script>
