@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <img id="dog" scr="newDog()" width="100px" height="100px"/>
+    <img id="dog" width="100px" height="100px"/>
     <button onclick="newDog()">New Dog</button>
     <script type="text/javascript">
         var apiUrl = 'https://dog.ceo/api/breeds/image/random';
@@ -16,11 +16,11 @@
             return response.json();
             }).then(data => {
                 document.getElementById("dog").src = data["message"];
-                console.log(data);
             }).catch(err => {
                 // Do something for an error here
             });
         }
+		window.onload = newDog();
     </script>
 </body>
 </html>
